@@ -1,0 +1,7 @@
+# Arquivos do projeto
+.idea/*
+discord-bot.iml
+node_modules/*
+yarn.lock
+.env
+yarn-error.log
