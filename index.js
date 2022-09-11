@@ -12,7 +12,7 @@ const fs = require('node:fs');
 require('dotenv').config();
 
 // Destruturação da classe Client e Intents.
-const { Client, Intents, Collection } = require('discord.js');
+const { Client, GatewayIntentBits, Collection } = require('discord.js');
 
 /**
  * Instanciamento do Client
@@ -20,7 +20,7 @@ const { Client, Intents, Collection } = require('discord.js');
  * FLAG GUILD_MESSAGES: Permite o bot receber mensagens.
  * @type {Client<boolean>}
  */
-const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] });
+const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent] });
 
 //	Permite acessar os comandos em outros arquivos
 client.commands = new Collection();
