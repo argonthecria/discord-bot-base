@@ -5,7 +5,7 @@
  * @license: MIT
  */
 
-const { MessageEmbed } = require('discord.js');
+const { EmbedBuilder } = require('discord.js');
 const axios = require('axios');
 
 module.exports = {
@@ -22,7 +22,7 @@ module.exports = {
 			.then((res) => {
 				const { banner } = res.data;
 
-				const bannerEmbed = new MessageEmbed()
+				const bannerEmbed = new EmbedBuilder()
 					.setColor('#faad29')
 					.setTitle('Banner')
 					.setAuthor({

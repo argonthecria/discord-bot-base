@@ -5,7 +5,7 @@
  * @license: MIT
  */
 
-const { MessageEmbed } = require('discord.js');
+const { EmbedBuilder } = require('discord.js');
 
 module.exports = {
 	name: 'avatar',
@@ -13,7 +13,7 @@ module.exports = {
 	cooldown: 5,
 	args: false,
 	async execute(message, args) {
-		const avatarEmbed = new MessageEmbed()
+		const avatarEmbed = new EmbedBuilder()
 			.setColor('#faad29')
 			.setTitle('Avatar')
 			.setAuthor({
