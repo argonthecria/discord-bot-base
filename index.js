@@ -5,13 +5,8 @@
  * @license: ISC
  */
 
-//	file sync
-const fs = require('node:fs');
-
-// Inicia as variáveis de ambiente.
 require('dotenv').config();
-
-// Destruturação da classe Client e Intents.
+const fs = require('node:fs');
 const { Client, GatewayIntentBits, Collection } = require('discord.js');
 
 /**
@@ -22,7 +17,6 @@ const { Client, GatewayIntentBits, Collection } = require('discord.js');
  */
 const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent] });
 
-//	Permite acessar os comandos em outros arquivos
 client.commands = new Collection();
 client.cooldowns = new Collection();
 
@@ -46,5 +40,4 @@ for (const file of eventFiles) {
 	}
 }
 
-// Realiza login no Discord com o Token do Bot atribuído na variável de ambiente
 client.login(process.env.TOKEN);
